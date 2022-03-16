@@ -4,8 +4,8 @@ from re import match
 from os import listdir
 from sys import stderr
 
-from yearprogress import yearprogress
-FUNCTION_TO_TEST = yearprogress
+from yearprogress import yearProgressFromStr
+FUNCTION_TO_TEST = yearProgressFromStr
 
 TESTS_PATH = './tests/'
 

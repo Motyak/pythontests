@@ -3,20 +3,23 @@
 from sys import stdin
 from math import floor
 
-class UserInput:
-    def __init__(self, nday, year):
-        self.nday, self.year = int(nday), int(year)
+from utils import parseArgs
 
-def getNdayAndYear(str):
-    return UserInput(*str.split(';'))
+import today
 
-def yearprogress(input):
-    userInput = getNdayAndYear(input)
-    isLeapYear = userInput.year % 4 == 0
+def yearProgress(nday=today.nday(), year=today.year()):
+    isLeapYear = year % 4 == 0
     nbOfDaysInYear = 365 + 1 * int(isLeapYear)
-    percentage = floor(userInput.nday / nbOfDaysInYear * 100)
+    percentage = floor(nday / nbOfDaysInYear * 100)
     return f'{percentage}%'
+
+def yearProgressFromStr(str=''):
+    if not str:
+        yearProgress()
+    args = parseArgs(str)
+    return yearProgress(*[int(a) for a in args])
 
 if __name__ == "__main__":
     userInput = stdin.read()
-    print(yearprogress(userInput), end='')
+    res = yearProgressFromStr(userInput)
+    print(res, end='')
