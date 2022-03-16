@@ -14,7 +14,7 @@ def yearProgress(nday=today.nday(), year=today.year()):
 
 def yearProgressFromStr(str=''):
     if not str:
-        yearProgress()
+        return yearProgress()
     args = utils.parseArgs(str)
     return yearProgress(*[int(a) for a in args])
 
