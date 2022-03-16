@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from re import match
-from os import listdir
-from sys import stderr
+import re # match()
+import os # listdir()
+import sys # stderr
 
 from yearprogress import yearProgressFromStr
 FUNCTION_TO_TEST = yearProgressFromStr
@@ -10,14 +10,14 @@ FUNCTION_TO_TEST = yearProgressFromStr
 TESTS_PATH = './tests/'
 
 def test():
-    test_files = listdir(TESTS_PATH)
+    test_files = os.listdir(TESTS_PATH)
 
     if not test_files:
         return
 
     tests = []
     for fname in test_files:
-        m = match(r'(.*)_out\.txt', fname)
+        m = re.match(r'(.*)_out\.txt', fname)
         if m:
             tests.append(m.group(1))
 
@@ -34,7 +34,7 @@ def test():
                 f"Test '{t}' is failing:", 
                 "\n-Expected: ", r"'''", f"{expecting}", r"'''", 
                 "\n-Had: ", r"'''", f"{output}", r"'''",
-                file=stderr, sep=''
+                file=sys.stderr, sep=''
             )
             exit(1)
 

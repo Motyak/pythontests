@@ -1,25 +1,24 @@
 #!/usr/bin/env python3
 
-from sys import stdin
-from math import floor
+import sys # stdin
+import math # floor()
 
-from utils import parseArgs
-
-import today
+import utils # parseArgs()
+import today # nday(), year()
 
 def yearProgress(nday=today.nday(), year=today.year()):
     isLeapYear = year % 4 == 0
     nbOfDaysInYear = 365 + 1 * int(isLeapYear)
-    percentage = floor(nday / nbOfDaysInYear * 100)
+    percentage = math.floor(nday / nbOfDaysInYear * 100)
     return f'{percentage}%'
 
 def yearProgressFromStr(str=''):
     if not str:
         yearProgress()
-    args = parseArgs(str)
+    args = utils.parseArgs(str)
     return yearProgress(*[int(a) for a in args])
 
 if __name__ == "__main__":
-    userInput = stdin.read()
+    userInput = sys.stdin.read()
     res = yearProgressFromStr(userInput)
     print(res, end='')

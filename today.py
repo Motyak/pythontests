@@ -1,7 +1,7 @@
-from datetime import datetime
+import datetime # need to import the all module to mock it in ut
 
 def _now():
-    return datetime.now()
+    return datetime.datetime.now()
 
 def nday():
     return _now().timetuple().tm_yday
