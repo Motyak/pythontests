@@ -29,7 +29,7 @@ Quel format (arguments) ?
 |#2|dernier jour d'une année non-bissextile|365;2019|100%|
 |#3|avant dernier jour d'une année non-bissextile|364;2019|99%|
 |#4|avant dernier jour d'une année bissextile|365;2020|99%|
-|#5|avant dernier jour d'une année bissextile|*aucune*|*progression d'aujourd'hui*|
+|#5|aujourd'hui|*aucune*|*progression d'aujourd'hui*|
 
 ### Stratégie de test
 Pour les tests #1-4, on appelle la fonction à tester avec les paramètres en entrée et vérifie que la sortie corresponde à l'attendu.
