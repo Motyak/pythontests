@@ -7,7 +7,7 @@ import sys # stderr
 from yearprogress import yearProgressFromStr
 FUNCTION_TO_TEST = yearProgressFromStr
 
-TESTS_PATH = './tests/'
+TESTS_PATH = './examples/'
 
 def test():
     test_files = os.listdir(TESTS_PATH)

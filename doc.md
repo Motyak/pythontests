@@ -38,3 +38,7 @@ Pour le test #5, on procède à 3 tests différents :
 - Vérifier que la fonction retournant la date du jour appelle la fonction système prévue à cet effet
 - Vérifier que la fonction système utilisée pour déterminer la date système donne le résultat escompté
 - Vérifier que l'heure système est à l'heure
+
+Pour garantir l'exactitude des tests, on supposera que :
+- L'heure système est la source de vérité concernant la date du jour
+- Interroger l'api web 'worldclockapi' retourne la bonne heure
