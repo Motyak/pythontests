@@ -4,8 +4,8 @@ import re # match()
 import os # listdir()
 import sys # stderr
 
-from yearprogress import yearProgressFromStr
-FUNCTION_TO_TEST = yearProgressFromStr
+from ninetyone import ninetyone
+FUNCTION_TO_TEST = ninetyone
 
 TESTS_PATH = './examples/'
 
@@ -29,7 +29,7 @@ def test():
         expecting = open(TESTS_PATH + t + '_out.txt', encoding='utf8').read()
         output = FUNCTION_TO_TEST(input)
 
-        if output != expecting:
+        if str(output) != expecting:
             print(
                 f"Test '{t}' is failing:", 
                 "\n-Expected: ", r"'''", f"{expecting}", r"'''", 
