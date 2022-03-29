@@ -38,7 +38,5 @@ class TodayTest(TestCase):
             print(f"WARN: We couldn't check if your system clock is on time "
                     + f'({dateAsStr})', file=sys.stderr)
 
-        assert True
-
 if __name__ == '__main__':
     main()

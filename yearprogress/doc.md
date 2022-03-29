@@ -41,4 +41,3 @@ Pour le test #5, on procède à 3 tests différents :
 
 Pour garantir l'exactitude des tests, on supposera que :
 - L'heure système est la source de vérité concernant la date du jour
-- Interroger l'api web 'worldclockapi' retourne la bonne heure
