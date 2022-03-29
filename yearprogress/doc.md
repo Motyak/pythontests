@@ -37,7 +37,7 @@ Pour les tests #1-4, on appelle la fonction à tester avec les paramètres en en
 Pour le test #5, on procède à 3 tests différents :
 - Vérifier que la fonction retournant la date du jour appelle la fonction système prévue à cet effet
 - Vérifier que la fonction système utilisée pour déterminer la date système donne le résultat escompté
-- Vérifier que l'heure système est à l'heure
+- Vérifier que l'heure système est à l'heure (pas un test, juste un warning en cas de différence)
 
 Pour garantir l'exactitude des tests, on supposera que :
 - L'heure système est la source de vérité concernant la date du jour
