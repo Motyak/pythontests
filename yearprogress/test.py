@@ -17,7 +17,7 @@ def test():
 
     tests = []
     for fname in test_files:
-        m = re.match(r'(.*)_out\.txt', fname)
+        m = re.match(r'(.*)\.in\.txt', fname)
         if m:
             tests.append(m.group(1))
 
@@ -25,8 +25,8 @@ def test():
         return
         
     for t in tests:
-        input = open(TESTS_PATH + t + '.txt', encoding='utf8').read()
-        expecting = open(TESTS_PATH + t + '_out.txt', encoding='utf8').read()
+        input = open(TESTS_PATH + t + '.in.txt', encoding='utf8').read()
+        expecting = open(TESTS_PATH + t + '.out.txt', encoding='utf8').read()
         output = FUNCTION_TO_TEST(input)
 
         if str(output) != expecting:
